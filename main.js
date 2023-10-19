@@ -16,7 +16,24 @@
     //para
     for(let contador< listaDeteclas.length; contador++){
 
-            cont tecl = listtaDeteclas{contador};
-            cont instrumento = tecla.classlist[1];
-            cont idAudio = '#som_${instrumento'; //template tring 
+            const tecl = listtaDeteclas{contador};
+            const instrumento = tecla.classlist[1];
+            const idAudio = '#som_${instrumento'; //template tring 
+
+            tecla.onclick = function () {
+                tocaSom(idAudio);
+            }
+
+            tecla.onkeydown = function (evento) {
+
+                if (evento.code === 'Space' || evento.code === 'enter'){
+                    tecla.classlist.add('ativa');
+                }
+
+            }
+
+            tecla.onkeyup = function () {
+                tecla.classlist.remove('ativa')
+            }
+            
     }
